@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<head> 
+  <%= stylesheet_link_tag 'application' %> 
+</head>
+
 <p>
   <strong>Name:</strong>
   <%= @park.name %>
-</p>
-
-<p>
-  <strong>Park code:</strong>
-  <%= @park.park_code %>
 </p>
 
 <p>
@@ -35,20 +34,15 @@
   <%= @park.state %>
 </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @park.email %>
-</p>
+  <p>
+    <strong>Phone:</strong>
+    <%= eval(@park.phone)["phoneNumber"]%>
+  </p>
+  <p>
+    <strong>Fax:</strong>
+    <%= eval(@park.fax)["phoneNumber"]%>
+  </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @park.phone %>
-</p>
-
-<p>
-  <strong>Fax:</strong>
-  <%= @park.fax %>
-</p>
 
 <p>
   <strong>Directions:</strong>
@@ -66,4 +60,4 @@
 </p>
 
 <%= link_to 'Edit', edit_park_path(@park) %> |
-<%= link_to 'Back', parks_path %>
+<%= link_to 'Back', '/homepage' %>
