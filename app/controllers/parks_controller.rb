@@ -1,9 +1,24 @@
+require 'net/http'
+require 'json'
+
 class ParksController < ApplicationController
   before_action :set_park, only: %i[ show edit update destroy ]
 
+  PARKS = %w[acad arch badl bibe bisc blca brca cany care CAVE chis cong crla cuva DEVA dena drto ever gaar glba glac grca grte grba grsa grsm gumo hale hosp indu isro jeff jotr katm KEFJ seki kova lacl lavo maca meve mora neri npsa noca olym pefo pinn redw romo sagu shen thro viis voya whsa wica wrst yell yose zion]
+  API_KEY = "EfU5J6OQ7ZBnBDRDHmPId0ex5vPcPF2ECw9JJY88"
+
   # GET /parks or /parks.json
   def index
+    # raw_url = "https://developer.nps.gov/api/v1/parks?parkCode=#{PARKS.join(",")}&api_key=#{API_KEY}&limit=#{PARKS.size}"
+    # url = URI.parse(raw_url)
+    # req = Net::HTTP::Get.new(url.to_s)
+    # res = Net::HTTP.start(url.host, url.port) do |http|
+    #   http.request(req)
+    # end
+    # puts res.body
+
     @parks = Park.all
+
   end
 
   # GET /parks/1 or /parks/1.json

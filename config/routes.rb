@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   post 'login', to: 'sessions#create'
 
+  post 'logout', to: 'sessions#logout'
+
   get 'welcome', to: 'sessions#welcome'
 
   resources :parks
