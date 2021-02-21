@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @park.name %>
+</p>
+
+<p>
+  <strong>Park code:</strong>
+  <%= @park.park_code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @park.description %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @park.url %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @park.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @park.longitude %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @park.state %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @park.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @park.phone %>
+</p>
+
+<p>
+  <strong>Fax:</strong>
+  <%= @park.fax %>
+</p>
+
+<p>
+  <strong>Directions:</strong>
+  <%= @park.directions %>
+</p>
+
+<p>
+  <strong>Directions url:</strong>
+  <%= @park.directions_url %>
+</p>
+
+<p>
+  <strong>Weather:</strong>
+  <%= @park.weather %>
+</p>
+
+<%= link_to 'Edit', edit_park_path(@park) %> |
+<%= link_to 'Back', parks_path %>
