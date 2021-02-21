@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Special Thanks to Piyush Agarwal, Noah Appleby, Yugo Nakai, Christina Koller, and all the other mentors/organizers that helped us! We wouldn't have been able to do anything without you!
 
-Things you may want to cover:
+git clone <repo> 
+cd 
+bundle install && yarn install 
+ruby /bin/webpack
+rails s
+  
+go to localhost:3000 or 127.0.0.1:3000
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
