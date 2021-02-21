@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'hello_world', to: 'hello_world#index'
-  root to: "sessions#welcome"
+  root to: "homepage#index"
 
   resources :users, only: [:new, :create]
   get 'profile', to: 'users#show'

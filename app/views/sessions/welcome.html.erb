@@ -1,5 +1,5 @@
 <h1>Welcome</h1>
-
+<%= react_component("Welcome_session", props:@welcome_props, prerenderp: false) %> 
 <% if logged_in? %>
   <h1>You are Logged In, <%= current_user.name %></h1>
 <% end %>

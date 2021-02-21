@@ -1,8 +1,5 @@
 class SessionsController < ApplicationController
-
-  def new
-
-  end
+  layout "welcome_session"
 
   def create
     @user = User.find_by(username: params[:username])
@@ -16,11 +13,11 @@ class SessionsController < ApplicationController
     end
   end
 
-  def login
+  #def login
 
-  end
+  #end
 
   def welcome
-
+    @welcome_props = {name:  current_user.name }
   end
 end

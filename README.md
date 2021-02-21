@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+git clone <repo> 
+
+cd <repo> 
+
+bundle install & yarn install
+
+
+
+Special Thanks to Piyush Agarwal, Noah Appleby, Yugo Nakai, and Christina Koller for helping us! We wouldn't have been able to do anything without you!
