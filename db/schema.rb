@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_20_213319) do
+ActiveRecord::Schema.define(version: 2021_02_21_092142) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer "park_id"
-    t.string "type"
+    t.string "address_type"
     t.string "line_1"
     t.string "line_2"
     t.string "city"

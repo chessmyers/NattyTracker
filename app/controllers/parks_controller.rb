@@ -9,77 +9,79 @@ class ParksController < ApplicationController
 
   # GET /parks or /parks.json
   def index
-    raw_url = "https://developer.nps.gov/api/v1/parks?parkCode=#{PARKS.join(",")}&api_key=#{API_KEY}&limit=#{PARKS.size}"
-    uri = URI.parse(raw_url)
-    response = Net::HTTP.get_response(uri)
+    @run ||= Rails.application.load_seed
 
-    if response.code == "200"
-      puts "SUCCESS RESPONSE"
-      result = JSON.parse(response.body)
-
-      result["data"].each do |doc|
-        park = Park.new
-        park.name = doc["fullName"]
-        park.park_code = doc["parkCode"]
-        park.description = doc["description"]
-        park.url = doc["url"]
-        park.latitude = doc["latitude"].to_f
-        park.longitude = doc["longitude"].to_f
-        park.state = doc["states"]
-        park.email = doc["contacts"]["emailAddresses"]&[0]&["emailAddress"]
-        park.phone = doc["contacts"]["phoneNumbers"].find { |number| number["type"] == "Voice" }
-        park.fax = doc["contacts"]["phoneNumbers"].find { |number| number["type"] == "Voice" }
-        park.directions = doc["directionsInfo"]
-        park.directions_url = doc["directionsUrl"]
-        park.weather = doc["weatherInfo"]
-
-        park.save!
-
-        doc["entranceFees"].each do |fee|
-          new_fee = Fee.new
-
-          new_fee.title = fee["title"]
-          new_fee.description = fee["description"]
-          new_fee.cost = fee["cost"]
-
-          new_fee.park_id = park.id
-
-          new_fee.save!
-        end
-
-        doc["addresses"].each do |address|
-          new_address = Address.new
-
-          new_address.type = address["type"]
-          new_address.line_1 = address["line1"]
-          new_address.line_2 = address["line2"]
-          new_address.city = address["city"]
-          new_address.state = address["state"]
-          new_address.postal_code = address["postalCode"]
-
-          new_address.park_id = park.id
-
-          new_address.save!
-        end
-
-        doc["images"].each do |image|
-          new_image = Image.new
-
-          new_image.title = image["title"]
-          new_image.caption = image["caption"]
-          new_image.alt_text = image["altText"]
-          new_image.credit = image["credit"]
-          new_image.url = image["url"]
-
-          new_image.park_id = park.id
-
-          new_image.save!
-        end
-      end
-    else
-      puts 'BAD RESPONSE'
-      pp response
-    end
+    # raw_url = "https://developer.nps.gov/api/v1/parks?parkCode=#{PARKS.join(",")}&api_key=#{API_KEY}&limit=#{PARKS.size}"
+    # uri = URI.parse(raw_url)
+    # response = Net::HTTP.get_response(uri)
+    #
+    # if response.code == "200"
+    #   puts "SUCCESS RESPONSE"
+    #   result = JSON.parse(response.body)
+    #
+    #   result["data"].each do |doc|
+    #     park = Park.new
+    #     park.name = doc["fullName"]
+    #     park.park_code = doc["parkCode"]
+    #     park.description = doc["description"]
+    #     park.url = doc["url"]
+    #     park.latitude = doc["latitude"].to_f
+    #     park.longitude = doc["longitude"].to_f
+    #     park.state = doc["states"]
+    #     park.email = doc["contacts"]["emailAddresses"]&[0]&["emailAddress"]
+    #     park.phone = doc["contacts"]["phoneNumbers"].find { |number| number["type"] == "Voice" }
+    #     park.fax = doc["contacts"]["phoneNumbers"].find { |number| number["type"] == "Voice" }
+    #     park.directions = doc["directionsInfo"]
+    #     park.directions_url = doc["directionsUrl"]
+    #     park.weather = doc["weatherInfo"]
+    #
+    #     park.save!
+    #
+    #     doc["entranceFees"].each do |fee|
+    #       new_fee = Fee.new
+    #
+    #       new_fee.title = fee["title"]
+    #       new_fee.description = fee["description"]
+    #       new_fee.cost = fee["cost"]
+    #
+    #       new_fee.park_id = park.id
+    #
+    #       new_fee.save!
+    #     end
+    #
+    #     doc["addresses"].each do |address|
+    #       new_address = Address.new
+    #
+    #       new_address.type = address["type"]
+    #       new_address.line_1 = address["line1"]
+    #       new_address.line_2 = address["line2"]
+    #       new_address.city = address["city"]
+    #       new_address.state = address["state"]
+    #       new_address.postal_code = address["postalCode"]
+    #
+    #       new_address.park_id = park.id
+    #
+    #       new_address.save!
+    #     end
+    #
+    #     doc["images"].each do |image|
+    #       new_image = Image.new
+    #
+    #       new_image.title = image["title"]
+    #       new_image.caption = image["caption"]
+    #       new_image.alt_text = image["altText"]
+    #       new_image.credit = image["credit"]
+    #       new_image.url = image["url"]
+    #
+    #       new_image.park_id = park.id
+    #
+    #       new_image.save!
+    #     end
+    #   end
+    # else
+    #   puts 'BAD RESPONSE'
+    #   pp response
+    # end
 
     @parks = Park.all
 
