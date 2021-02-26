@@ -31,7 +31,7 @@ go to localhost:3000 or 127.0.0.1:3000
 
 ### Park Page + Parks Database Table: 
 <img src = "/imgs/park_page.PNG" width = 650>
-<img src = "/imgs/database_parks.PNG" width = 650>
+<img src = "/imgs/database_of_parks.PNG" width = 650>
 <br/> <br/> 
 
 Special Thanks to Piyush Agarwal, Noah Appleby, Yugo Nakai, Christina Koller, and all the other mentors/organizers that helped us! We wouldn't have been able get this far without you!
