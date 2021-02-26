@@ -2,6 +2,7 @@ require 'net/http'
 require 'json'
 
 class ParksController < ApplicationController
+  layout "park_page"
   before_action :set_park, only: %i[ show edit update destroy ]
 
   PARKS = %w[acad arch badl bibe bisc blca brca cany care CAVE chis cong crla cuva DEVA dena drto ever gaar glba glac grca grte grba grsa grsm gumo hale hosp indu isro jeff jotr katm KEFJ seki kova lacl lavo maca meve mora neri npsa noca olym pefo pinn redw romo sagu shen thro viis voya whsa wica wrst yell yose zion]
