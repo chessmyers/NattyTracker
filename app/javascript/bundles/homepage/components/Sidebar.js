@@ -8,28 +8,34 @@ export default props => {
         Home
       </a>
       <br/>
-      <a className="menu-item" href="/parks/1">
-        Arcadia
+      <a href = "/parks/1">
+        <input type = "checkbox" className="menu-item"></input>
+        <label for="menu-item"> Arcadia </label>
+      </a> 
+      <br/>
+      <a href = "/parks/2">
+        <input type = "checkbox" className="menu-item"></input>
+        <label for="menu-item"> Arches </label>
+      </a> 
+      <br/>
+      <a href = "/parks/3">
+        <input type = "checkbox" className="menu-item"></input>
+        <label for="menu-item"> Badlands </label>
       </a>
       <br/>
-      <a className="menu-item" href="/parks/2">
-        Arches
+      <a href = "/parks/2">
+        <input type = "checkbox" className="menu-item"></input>
+        <label for="menu-item"> Big Bend </label>
       </a>
       <br/>
-      <a className="menu-item" href="/parks/3">
-        Badlands
+      <a href = "/parks/2">
+        <input type = "checkbox" className="menu-item"></input>
+        <label for="menu-item"> Grand Canyon </label>
       </a>
       <br/>
-      <a className="menu-item" href="/parks/4">
-        Big Bend
-      </a>
-      <br/>
-      <a className="menu-item" href="/parks/23">
-        Grand Canyon
-      </a>
-      <br/>
-      <a className="menu-item" href="/parks/60">
-        Yosemite
+      <a href = "/parks/2">
+        <input type = "checkbox" className="menu-item"></input>
+        <label for="menu-item"> Yosemite </label>
       </a>
     </Menu>
   );
