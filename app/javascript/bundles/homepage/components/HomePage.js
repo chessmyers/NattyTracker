@@ -18,10 +18,6 @@ const HomePage = (props) => {
         <div id="page-wrap">
           <h1> 
             Welcome to NattyTracker!
-              {/* This is the main page
-              {arr.map((num) => {
-                return <li>{num} </li> 
-              })} */}
           </h1>
           <h2> 
             Please click the button in the top-left, and choose a National Park!
