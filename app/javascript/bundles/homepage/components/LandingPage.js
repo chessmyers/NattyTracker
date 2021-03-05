@@ -16,7 +16,7 @@ const LandingPage = () => {
                         Login
                     </h1>
                     <div class = "Container">
-                        <label for="uname"> <b>Username</b></label>
+                        <label htmlFor="uname"> <b>Username</b></label>
                         <input type = "text" placeholder="Username" name="uname" required></input>
                         <button type = "submit"> Login</button> 
                         <label> 

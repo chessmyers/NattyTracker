@@ -5,13 +5,9 @@
  import Sidebar from './Sidebar';
 
 const HomePage = (props) => {
-    //const parks = props.parks
-    //const listParks = parks.map((park) =>
-   // <li key = {park.toString()}>
-    //    {park}
-    //</li>); 
+  const parks = props.parks;
+  console.log({parks});
   return(
-    //   <ul> listParks</ul>  
     <main> 
       <div className = "home" id = "outer-container">
         <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
@@ -28,5 +24,6 @@ const HomePage = (props) => {
   );
 };
 HomePage.propTypes = {
+  parks: PropTypes.array.isRequired
 }
 export default HomePage; 
