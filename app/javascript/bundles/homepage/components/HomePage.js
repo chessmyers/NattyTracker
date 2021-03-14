@@ -5,12 +5,11 @@
  import Sidebar from './Sidebar';
 
 const HomePage = (props) => {
-  const parks = props.parks;
-  console.log({parks});
+  var parks = props.parks; 
   return(
     <main> 
       <div className = "home" id = "outer-container">
-        <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+        <Sidebar parks = {parks} pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
         <div id="page-wrap">
           <h1> 
             Welcome to NattyTracker!

@@ -2,13 +2,13 @@ import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
 
 export default props => {
-  // CODE BROKEN RIGHT NOW. NEED TO FIND WAY TO PASS IN DATABASE INFO
-  console.log(props.parks)
+  var parks = props.parks; 
   // var arrayLength = props.parks.length;
-  // for (var i = 0; i < arrayLength; i++) {
-  //   console.log(props.parks[i]);// 
+  for (var i = 0; i < parks.length; i++) {
+    console.log(props.parks[i]['name']);
     //Do something
-//}
+  }
+
   return (
     <Menu>
       <a className="menu-item" href="/homepage">
@@ -21,13 +21,14 @@ export default props => {
 
        {/* {arr.map((parks) => { 
         return (
-        {/* <a href = {"/parks/" + parks.id}>
+        { <a href = {"/parks/" + parks.id}>
           <input type = "checkbox" className="menu-item"></input>
           <label for="menu-item"> {parks.name} </label>
           <br/>
         </a>
         )
       })} */}
+
 
       <a href = "/parks/1">
         <input type = "checkbox" className="menu-item"></input>
@@ -61,4 +62,3 @@ export default props => {
     </Menu>
   );
 };
-
