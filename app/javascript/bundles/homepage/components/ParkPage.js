@@ -9,7 +9,8 @@ const ParkPage = (props) => {
         <p> This is the parks page </p>
     );
 } 
+
 ParkPage.propTypes = {
-    
+
 }
 export default ParkPage; 
