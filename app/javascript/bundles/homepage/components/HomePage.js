@@ -5,7 +5,7 @@
  import Sidebar from './Sidebar';
 
 const HomePage = (props) => {
-  var parks = props.parks; 
+  const parks = props.parks
   return(
     <main> 
       <div className = "home" id = "outer-container">
